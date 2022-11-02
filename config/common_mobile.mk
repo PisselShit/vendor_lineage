@@ -24,6 +24,10 @@ PRODUCT_PACKAGES += \
     Glimpse
 endif
 
+# FaceEnroll - Settings RRO
+ PRODUCT_PACKAGES += \
+     FaceEnrollSettingsOverlay
+
 ifeq ($(PRODUCT_TYPE), go)
 PRODUCT_PACKAGES += \
     Launcher3QuickStepGo
