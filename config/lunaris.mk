@@ -148,7 +148,11 @@ PRODUCT_PACKAGES += \
     MatLog
 endif
 
+# FaceUnlock
 ifneq ($(TARGET_FACE_UNLOCK_SUPPORTED),false)
+ifeq ($(TARGET_SUPPORTS_GFU),true)
+$(call inherit-product-if-exists, vendor/google/faceunlock/config.mk)
+else
 PRODUCT_PACKAGES += \
     FaceUnlock
 
@@ -157,6 +161,7 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/android.hardware.biometrics.face.xml
+endif
 endif
 
 # DeviceAsWebcam
