@@ -2,7 +2,7 @@ PRODUCT_VERSION_MAJOR = 16
 PRODUCT_VERSION_MINOR = 0
 
 # Increase Lunaris Version with each major release.
-LUNARIS_VERSION := 3.7
+LUNARIS_VERSION := 3.7-BETA
 
 # Internal version
 LINEAGE_VERSION := LunarisAOSP-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date +%Y%m%d)-$(LINEAGE_BUILD)-v$(LUNARIS_VERSION)
