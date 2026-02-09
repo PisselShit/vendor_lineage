@@ -26,12 +26,12 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Enable blur
 TARGET_ENABLE_BLUR ?= true
 ifeq ($(TARGET_ENABLE_BLUR),true)
-PRODUCT_SYSTEM_PROPERTIES += \
+PRODUCT_PRODUCT_PROPERTIES += \
     ro.custom.blur.enable=true \
     persist.sysui.disableBlur=false \
     ro.surface_flinger.supports_background_blur=1
 else
-PRODUCT_SYSTEM_PROPERTIES += \
+PRODUCT_PRODUCT_PROPERTIES += \
     ro.custom.blur.enable=false \
     persist.sysui.disableBlur=true \
     ro.surface_flinger.supports_background_blur=0
@@ -100,7 +100,7 @@ PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 TARGET_OPTIMIZED_DEXOPT ?= false
 ifeq ($(TARGET_OPTIMIZED_DEXOPT),true)
     PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := speed-profile
-    PRODUCT_SYSTEM_PROPERTIES += \
+    PRODUCT_PRODUCT_PROPERTIES += \
         pm.dexopt.post-boot=speed-profile \
         pm.dexopt.first-boot=verify \
         pm.dexopt.boot-after-ota=verify \
@@ -184,7 +184,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # UDFPS properties
 TARGET_CUSTOM_UDFPS ?= false
-PRODUCT_SYSTEM_PROPERTIES += \
+PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.udfps.custom=$(TARGET_CUSTOM_UDFPS)
 
 BYPASS_CHARGE_SUPPORTED ?= false
@@ -213,11 +213,11 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 # Quick Switch (Pixel Launcher)
 ifeq ($(WITH_GMS),true)
-PRODUCT_SYSTEM_PROPERTIES += \
+PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.default_launcher=1 \
     persist.sys.quickswitch_pixel_shipped=1
 else
-PRODUCT_SYSTEM_PROPERTIES += \
+PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.default_launcher=0
 endif
 
